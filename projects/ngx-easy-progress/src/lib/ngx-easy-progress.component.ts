@@ -6,6 +6,7 @@ export interface progressBarOptions {
   thickness?: string;
   fgColor?: string;
   bgColor?: string;
+  align?: "left" | "center" | "right";
 }
 
 @Component({
@@ -19,7 +20,8 @@ export class NgxEasyProgressComponent implements OnInit {
 
   @Input("options") mOptions: progressBarOptions = {};
   @Input("progress") set progress(p:number) {
-    this.mProgress = p*100 ;
+    let _p = p*100 ;
+    this.mProgress = _p > 100 ? 100 : (_p < 0 ? 0 : _p) ;
   }
   
   constructor() {
@@ -42,8 +44,18 @@ export class NgxEasyProgressComponent implements OnInit {
 
   get outerStyle() {
     let _base:any = {
-      'background-color': this.mOptions.bgColor || "#ddd"
+      'background-color': this.mOptions.bgColor || "#ddd",
     } ;
+
+    switch(this.mOptions.align) {
+      case 'center':
+        _base['margin-left'] = 'auto' ;
+        _base['margin-right'] = 'auto' ;
+        break ;
+      case 'right':
+        _base['margin-left'] = 'auto' ;
+        _base['margin-right'] = '0' ;
+    }
 
     if(this.mOptions.vertical) {
       _base['width'] = this.mOptions.thickness || "20px" ;

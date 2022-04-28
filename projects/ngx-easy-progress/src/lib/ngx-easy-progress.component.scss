@@ -6,8 +6,6 @@
   border-radius: 8px;
   background-color: #ddd;
 
-  margin: auto;
-
   &.vr {
       height: 100%;
       .push {
@@ -19,6 +17,7 @@
   }
 
   &.or {
+      display: flex;
       width: 100%;
       .push {
           height: 100%;
