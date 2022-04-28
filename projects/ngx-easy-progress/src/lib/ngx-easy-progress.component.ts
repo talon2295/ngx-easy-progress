@@ -9,7 +9,7 @@ export interface progressBarOptions {
 }
 
 @Component({
-  selector: 'easy-progress',
+  selector: 'ngx-easy-progress',
   templateUrl: './ngx-easy-progress.component.html',
   styleUrls: ['./ngx-easy-progress.component.scss'],
 })

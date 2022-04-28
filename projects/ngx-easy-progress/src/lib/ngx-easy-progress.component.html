@@ -1,0 +1,17 @@
+<div *ngIf="mOptions.vertical;then vr else or"></div>
+
+<div class>
+  <ng-template #vr>
+    <div class="outer vr" [ngStyle]="outerStyle">
+      <div class="push" *ngIf="mOptions.invert" [style.height.%]="100 - mProgress"></div>
+      <div class="progress" [ngStyle]="barStyle">
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #or>
+    <div class="outer or" fxLayout="row" [ngStyle]="outerStyle">
+      <div class="push" *ngIf="mOptions.invert" [style.width.%]="100 - mProgress"></div>
+      <div class="progress" [ngStyle]="barStyle"></div>
+    </div>
+  </ng-template>
+</div>
