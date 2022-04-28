@@ -1,0 +1,30 @@
+.progress {
+  border-radius: 8px;
+}
+
+.outer {
+  border-radius: 8px;
+  background-color: #ddd;
+
+  margin: auto;
+
+  &.vr {
+      height: 100%;
+      .push {
+          width: 100%;
+      }
+      .progress {
+          width: 100%;
+      }
+  }
+
+  &.or {
+      width: 100%;
+      .push {
+          height: 100%;
+      }
+      .progress {
+          height: 100%;
+      }
+  }
+}
