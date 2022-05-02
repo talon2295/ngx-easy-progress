@@ -17,7 +17,7 @@ export class AppComponent {
   pbOptions1: progressBarOptions = {
     vertical: true,
     invert: true,
-    align: 'center',
+    align: 'right',
     bgColor: "red"
   }
   pbOptions2: progressBarOptions = {
