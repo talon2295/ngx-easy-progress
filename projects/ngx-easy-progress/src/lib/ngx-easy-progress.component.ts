@@ -68,7 +68,6 @@ export class NgxEasyProgressComponent implements OnInit {
   }
 
   get bufStyle() {
-    
     let _base:any = {
       'background-color': this.mOptions.bufColor || "#eee",
       'border-radius': this.mOptions.borderRadius || this.defBorderRadius,

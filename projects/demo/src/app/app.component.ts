@@ -43,6 +43,7 @@ export class AppComponent {
     vertical: false,
     invert: false,
     animate: true,
+    thickness: "8px",
     animationParams: ".5s ease-out",
     bufColor: "#aaffaa"
   }
