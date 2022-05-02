@@ -1,6 +1,12 @@
 # NgxEasyProgress
 
+![npm](https://img.shields.io/npm/dw/ngx-easy-progress)
+
 An easy and customizable progress bar for angular.
+
+## Repo
+
+[GitHub - Talon2295 - ngx-easy-progress](https://github.com/talon2295/ngx-easy-progress)
 
 ## Install
 
@@ -16,6 +22,7 @@ npm install ngx-easy-progress
 
 Progress is a number between 0 and 1
 If progress < 0 bar is indeterminate
+Buffer is a number between 0 and 1
 
 ### Options
 
@@ -54,3 +61,7 @@ interface progressBarOptions {
 Run `ng serve` in the repo root.
 
 The source is inside `projects/demo`
+
+## Contribute
+
+Please let me know if there are some bug or if you need some extra features.
