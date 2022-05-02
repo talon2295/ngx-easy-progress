@@ -1,11 +1,22 @@
 {
   "name": "ngx-easy-progress",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "An easy and customizable progress bar for angular",
+  "license": "GNU General Public License v3.0",
   "peerDependencies": {
     "@angular/common": "^13.3.0",
     "@angular/core": "^13.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talon2295/ngx-easy-progress.git"
+  },
+  "keywords": [
+    "angular",
+    "progress",
+    "progressbar"
+  ]
 }
