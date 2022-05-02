@@ -6,6 +6,7 @@ export interface progressBarOptions {
   thickness?: string;
   fgColor?: string;
   bgColor?: string;
+  borderRadius?: string;
   align?: "left" | "center" | "right";
 }
 
@@ -29,7 +30,8 @@ export class NgxEasyProgressComponent implements OnInit {
 
   get barStyle() {
     let _base:any = {
-      'background-color': this.mOptions.fgColor || "#4477ee"
+      'background-color': this.mOptions.fgColor || "#4477ee",
+      'border-radius': this.mOptions.borderRadius || "8px",
     } ;
 
     if(this.mOptions.vertical) {
@@ -45,6 +47,7 @@ export class NgxEasyProgressComponent implements OnInit {
   get outerStyle() {
     let _base:any = {
       'background-color': this.mOptions.bgColor || "#ddd",
+      'border-radius': this.mOptions.borderRadius || "8px",
     } ;
 
     switch(this.mOptions.align) {

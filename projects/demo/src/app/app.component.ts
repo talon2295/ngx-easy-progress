@@ -24,7 +24,9 @@ export class AppComponent {
     vertical: true,
     invert: true,
     align: 'center',
-    fgColor: "red"
+    fgColor: "#1144ff",
+    thickness: "8px",
+    borderRadius: "0",
   }
   pbOptions3: progressBarOptions = {
     vertical: false,
