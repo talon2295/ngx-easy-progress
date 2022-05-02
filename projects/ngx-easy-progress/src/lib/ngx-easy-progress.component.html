@@ -5,7 +5,7 @@
         <div *ngIf="mBuffer;then hasBuffer else noBuffer"></div>
         <ng-template #hasBuffer>
             <div class="buffer-base" [ngStyle]="baseStyle"></div> 
-            <div class="buffer" [ngStyle]="bufStyle" [class]="mOptions.invert ? 'invert' : ''"></div> 
+            <div class="buffer" [ngStyle]="bufStyle" [class.invert]="mOptions.invert"></div> 
         </ng-template>
         <ng-template #noBuffer>
             <div class="base" [ngStyle]="baseStyle"></div> 
@@ -19,7 +19,7 @@
         <div *ngIf="mBuffer;then hasBuffer else noBuffer"></div>
         <ng-template #hasBuffer>
             <div class="buffer-base" [ngStyle]="baseStyle"></div> 
-            <div class="buffer" [ngStyle]="bufStyle" [class]="mOptions.invert ? 'invert' : ''"></div> 
+            <div class="buffer" [ngStyle]="bufStyle" [class.invert]="mOptions.invert"></div> 
         </ng-template>
         <ng-template #noBuffer>
             <div class="base"[ngStyle]="baseStyle"></div> 

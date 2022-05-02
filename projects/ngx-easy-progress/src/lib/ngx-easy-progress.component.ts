@@ -25,7 +25,7 @@ export class NgxEasyProgressComponent implements OnInit {
   private detThickness:string = "20px" ;
 
   mProgress: string = "0" ; 
-  mBuffer: number = 0 ; 
+  mBuffer: string = "0" ; 
   mIndeterminate: boolean = false
 
   @Input("options") mOptions: progressBarOptions = {};
@@ -36,7 +36,7 @@ export class NgxEasyProgressComponent implements OnInit {
   }
   @Input("buffer") set buffer(p:number) {
     let _p = p*100 ;
-    this.mBuffer = _p > 100 ? 100 : (_p < 0 ? 0 : _p) ;
+    this.mBuffer = (_p > 100 ? 100 : (_p < 0 ? 0 : _p)) + "%" ;
   }
 
   constructor() {
@@ -74,10 +74,17 @@ export class NgxEasyProgressComponent implements OnInit {
     } ;
 
     if(this.mOptions.vertical) {
-      _base['height'] = (this.mBuffer || 0) + "%" ;
+      _base['height'] = this.mBuffer || "0%" ;
+      if(this.mOptions.animate) {
+        _base['transition'] = "height " + (this.mOptions.animationParams || ".3s ease-out" );
+      }
     }
     else {
-      _base['width'] = (this.mBuffer || 0) + "%" ;
+      _base['width'] = this.mBuffer || "0%" ;
+      if(this.mOptions.animate) {
+        _base['transition'] = "width " + (this.mOptions.animationParams || ".3s ease-out" );
+      }
+      
     }
 
     return _base ;

@@ -1,6 +1,6 @@
 {
   "name": "ngx-easy-progress",
-  "version": "0.1.1",
+  "version": "0.2.2",
   "description": "An easy and customizable progress bar for angular",
   "license": "GNU General Public License v3.0",
   "peerDependencies": {
