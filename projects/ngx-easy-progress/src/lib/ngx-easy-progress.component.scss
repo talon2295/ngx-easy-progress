@@ -1,29 +1,44 @@
 .progress {
-  border-radius: 8px;
+    border-radius: 8px;
 }
 
 .outer {
-  border-radius: 8px;
-  background-color: #ddd;
+    border-radius: 8px;
+    background-color: #ddd;
 
-  &.vr {
-      height: 100%;
-      .push {
-          width: 100%;
-      }
-      .progress {
-          width: 100%;
-      }
-  }
+    &.vr {
+        height: 100%;
+        position: relative;
 
-  &.or {
-      display: flex;
-      width: 100%;
-      .push {
-          height: 100%;
-      }
-      .progress {
-          height: 100%;
-      }
-  }
+        .progress {
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+        .buffer {
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    &.or {
+        width: 100%;
+        position: relative;
+
+        .progress {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            z-index: 800;
+        }
+        .buffer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: red;
+            z-index: 900;
+        }
+    }
 }

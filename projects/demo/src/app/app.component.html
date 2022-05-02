@@ -2,15 +2,15 @@ HEAD
 
 <div class="pbArea p1">
   <div class="border">
-    <ngx-easy-progress [options]="pbOptions0" [progress]=".85"></ngx-easy-progress>
+    <ngx-easy-progress [options]="pbOptions0" [progress]="progr"></ngx-easy-progress>
     vertical - no invert
   </div>
   <div class="border">
-    <ngx-easy-progress [options]="pbOptions1" [progress]=".85"></ngx-easy-progress>
+    <ngx-easy-progress [options]="pbOptions1" [progress]="progr"></ngx-easy-progress>
     vertical - invert
   </div>
   <div class="border">
-    <ngx-easy-progress [options]="pbOptions2" [progress]=".85"></ngx-easy-progress>
+    <ngx-easy-progress [options]="pbOptions2" [progress]="progr"></ngx-easy-progress>
     bla bla bla 
   </div>
 </div>
@@ -19,13 +19,18 @@ HEAD
 
 </div>
 <div class="p1">
-  <ngx-easy-progress [options]="pbOptions3" [progress]=".85"></ngx-easy-progress>
+  <ngx-easy-progress [options]="pbOptions3" [progress]="progr"></ngx-easy-progress>
   horizontal - invert
 </div>
 
 <div class="p1">
-  <ngx-easy-progress [options]="pbOptions4" [progress]=".85"></ngx-easy-progress>
+  <ngx-easy-progress [options]="pbOptions4" [progress]="progr"></ngx-easy-progress>
   horizontal - no invert
+</div>
+
+<div class="p1">
+  <ngx-easy-progress [options]="pbOptions5" [progress]="progr" [buffer]=".05"></ngx-easy-progress>
+  horizontal - no invert - buffer
 </div>
 
 FOOT
