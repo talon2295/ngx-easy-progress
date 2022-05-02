@@ -2,13 +2,29 @@
 
 <ng-template #vr>
     <div class="outer vr" [ngStyle]="outerStyle">
-        <div class="progress" [ngStyle]="barStyle" [style]="mOptions.invert ? 'top: 0' : 'bottom: 0'"></div>
-        <div class="buffer" [ngStyle]="bufStyle"></div> 
+        <div *ngIf="mBuffer;then hasBuffer else noBuffer"></div>
+        <ng-template #hasBuffer>
+            <div class="buffer-base" [ngStyle]="baseStyle"></div> 
+            <div class="buffer" [ngStyle]="bufStyle" [class]="mOptions.invert ? 'invert' : ''"></div> 
+        </ng-template>
+        <ng-template #noBuffer>
+            <div class="base" [ngStyle]="baseStyle"></div> 
+        </ng-template>
+
+        <div class="progress" [class.invert]="mOptions.invert" [class.indeterminate]="mIndeterminate" [ngStyle]="barStyle"></div>
     </div>
 </ng-template>
 <ng-template #or>
     <div class="outer or" [ngStyle]="outerStyle">
-        <div class="progress" [ngStyle]="barStyle" [style]="mOptions.invert ? 'right: 0' : 'left: 0'"></div>
-        <div class="buffer" [ngStyle]="bufStyle"></div> 
+        <div *ngIf="mBuffer;then hasBuffer else noBuffer"></div>
+        <ng-template #hasBuffer>
+            <div class="buffer-base" [ngStyle]="baseStyle"></div> 
+            <div class="buffer" [ngStyle]="bufStyle" [class]="mOptions.invert ? 'invert' : ''"></div> 
+        </ng-template>
+        <ng-template #noBuffer>
+            <div class="base"[ngStyle]="baseStyle"></div> 
+        </ng-template>
+
+        <div class="progress" [class.invert]="mOptions.invert" [class.indeterminate]="mIndeterminate" [ngStyle]="barStyle"></div>
     </div>
 </ng-template>

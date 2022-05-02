@@ -4,21 +4,55 @@
 
 .outer {
     border-radius: 8px;
-    background-color: #ddd;
+    //background-color: #ddd;
 
     &.vr {
         height: 100%;
         position: relative;
 
-        .progress {
+        .base {
             position: absolute;
             left: 0;
             width: 100%;
+            z-index: 700;
+        }
+        .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+
+            z-index: 900;
+
+            &.invert {
+                top: auto ;
+                bottom: 0 ;
+                &.indeterminate {
+                    animation: vrIndeterminateMoveI 5s infinite linear;
+                }
+            }
+            &.indeterminate {
+                animation: vrIndeterminateMove 5s infinite linear;
+            }
         }
         .buffer {
             position: absolute;
             left: 0;
+            top: 0;
             width: 100%;
+
+            z-index: 800;
+
+            &.invert {
+                top: auto ;
+                bottom: 0 ;
+            }
+        }
+        .buffer-base {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 700;
         }
     }
 
@@ -26,19 +60,111 @@
         width: 100%;
         position: relative;
 
-        .progress {
+        .base {
             position: absolute;
             top: 0;
             height: 100%;
-            z-index: 800;
+
+            z-index: 700;
+        }
+        .progress {
+            position: absolute;
+            top: 0;
+            left: 0 ;
+            height: 100%;
+
+            z-index: 900;
+
+            &.invert {
+                left: auto ;
+                right: 0 ;
+                &.indeterminate {
+                    animation: orIndeterminateMoveI 5s infinite linear;
+                }
+            }
+            &.indeterminate {
+                animation: orIndeterminateMove 5s infinite linear;
+            }
         }
         .buffer {
             position: absolute;
             top: 0;
-            left: 0;
+            left: 0 ;
+            height: 100%;
+
+            z-index: 800;
+
+            &.invert {
+                left: auto ;
+                right: 0 ;
+            }
+        }
+        .buffer-base {
+            position: absolute;
+            top: 0;
             height: 100%;
             background-color: red;
-            z-index: 900;
+            z-index: 700;
         }
+    }
+}
+
+@keyframes orIndeterminateMove {
+    0% {
+        left: 0;
+        transform: translateX(0);
+    }
+    50% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    100% {
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes vrIndeterminateMove {
+    0% {
+        top: 0;
+        transform: translateY(0);
+    }
+    50% {
+        top: 100%;
+        transform: translateY(-100%);
+    }
+    100% {
+        top: 0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes orIndeterminateMoveI {
+    0% {
+        right: 0;
+        transform: translateX(0);
+    }
+    50% {
+        right: 100%;
+        transform: translateX(100%);
+    }
+    100% {
+        right: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes vrIndeterminateMoveI {
+    0% {
+        bottom: 0;
+        transform: translateY(0);
+    }
+    50% {
+        bottom: 100%;
+        transform: translateY(100%);
+    }
+    100% {
+        bottom: 0;
+        transform: translateY(0);
     }
 }

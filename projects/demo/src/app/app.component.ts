@@ -12,7 +12,6 @@ export class AppComponent {
   pbOptions0: progressBarOptions = {
     vertical: true,
     invert: false,
-    align: 'center'
   }
   pbOptions1: progressBarOptions = {
     vertical: true,
@@ -32,8 +31,8 @@ export class AppComponent {
   }
   pbOptions3: progressBarOptions = {
     vertical: false,
-    invert: true,
-    animate: true
+    invert: true,animate: true,
+    animationParams: ".5s ease-in"
   }
   pbOptions4: progressBarOptions = {
     vertical: false,
@@ -43,6 +42,9 @@ export class AppComponent {
   pbOptions5: progressBarOptions = {
     vertical: false,
     invert: false,
+    animate: true,
+    animationParams: ".5s ease-out",
+    bufColor: "#aaffaa"
   }
 
   mProgr: number = 0;
